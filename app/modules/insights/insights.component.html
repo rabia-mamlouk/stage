@@ -1,0 +1,21 @@
+<section class="insights-section">
+  <div class="container">
+    <h2 class="title">  Analyses NeoBoard</h2>
+    <p class="subtitle">
+      Découvrez nos dernières analyses, tutoriels et articles sur les cartes électroniques programmables, les tendances et les projets DIY.
+    </p>
+
+    <div class="articles-grid">
+      <div class="article-card" *ngFor="let article of articles">
+        <h3>{{ article.title }}</h3>
+        <p class="category">{{ article.category }}</p>
+        <a href="#">Lire plus →</a>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a class="btn" href="#">Voir tous les articles</a>
+      <a class="btn secondary" href="#">Proposer un sujet</a>
+    </div>
+  </div>
+</section>

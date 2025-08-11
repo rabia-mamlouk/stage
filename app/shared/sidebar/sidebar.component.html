@@ -1,0 +1,12 @@
+<button (click)="toggleSidebar()" class="toggle-btn">☰</button>
+
+<div [class.hidden]="!isSidebarVisible" class="sidebar">
+  <ul>
+    <h1>Categories</h1>
+    <li routerLink="/arduino">Arduino</li>
+    <li routerLink="/raspberry">Raspberry Pi</li>
+    <li routerLink="/stm32">STM32</li>
+    <li routerLink="/microbit">Micro:bit</li>
+    <li routerLink="/espressif">Espressif</li>
+  </ul>
+</div>

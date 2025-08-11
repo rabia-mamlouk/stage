@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="assets/logo.jpg" alt="NeoBoard" class="logo" />
+    <li routerLink="/home">NeoBoard</li>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search Products..." />
+    <button>Search</button>
+  </div>
+
+  <div class="navbar-right">
+    <ul class="nav-links">
+      <li><a routerLink="/shop">Shop Products</a></li>
+      <li><a routerLink="/industries">Industries</a></li>
+      <li><a routerLink="/quality">Quality</a></li>
+      <li><a routerLink="/about">About Us</a></li>
+      <li><a routerLink="/insights">Insights</a></li>
+      <li><a routerLink="/contacts">Contacts</a></li>
+    </ul>
+
+    <div class="icons">
+      <button (click)="openContactModal()" class="phone-icon">
+        <i class="fas fa-phone"></i>
+      </button>
+      <div *ngIf="isContactModalOpen" class="modal-overlay" (click)="closeContactModal()">
+        <div class="modal-content" (click)="$event.stopPropagation()">
+          <h2>Get in touch with our team of<br> electronic component experts.</h2>
+
+          <button class="modal-btn">
+            +1 (617) 502 4100 <span class="icon"><i class="fas fa-phone"></i></span>
+          </button>
+
+          <button class="modal-btn">
+            Request A Quote <span class="icon">➡️</span>
+          </button>
+
+          <button class="modal-btn green" (click)="closeContactModal()" routerLink="/contacts">
+            Contact Us <span class="icon">➡️</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="cart" routerLink="/cart">
+        🛒
+        <span class="badge">4</span>
+      </div>
+    </div>
+  </div>
+</nav>

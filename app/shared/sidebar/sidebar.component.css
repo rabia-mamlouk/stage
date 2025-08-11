@@ -1,0 +1,87 @@
+/* === Sidebar Container === */
+.sidebar {
+  width: 250px;
+  background-color: #003c2f;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 20px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out, opacity 0.3s, visibility 0.3s;
+  opacity: 1;
+  visibility: visible;
+  z-index: 999;
+}
+
+/* === Hide Sidebar === */
+.sidebar.hidden {
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* === Sidebar List Items === */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.sidebar ul li {
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 16px;
+}
+
+.sidebar ul li:hover {
+  background-color: #035c45;
+  transform: translateX(5px);
+}
+
+/* === Toggle Button === */
+.toggle-btn {
+  position: fixed;
+  top: 75px;
+  left: 5px; /* ← Change this to move left or right */
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 7px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+
+.toggle-btn:hover {
+  background-color: #1e7e34;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .sidebar ul li {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .toggle-btn {
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+}
