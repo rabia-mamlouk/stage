@@ -1,0 +1,14 @@
+<div class="industries-section">
+  <div class="industries-header">
+    <h2>Secteurs que nous desservons.</h2>
+    <p>Nous offrons des services et établissons des partenariats avec de nombreuses entreprises dans un large éventail de secteurs d’activité.
+</p>
+  </div>
+
+  <div class="industries-grid">
+    <div class="industry-card" *ngFor="let industry of industries">
+      <div class="icon">{{ industry.icon }}</div>
+      <p class="name">{{ industry.name }}</p>
+    </div>
+  </div>
+</div>

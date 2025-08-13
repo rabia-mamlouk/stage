@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch Chrome against frontend",
+            "url": "http://localhost:4200",
+            "webRoot": "${workspaceFolder}",
+            "env": {
+                "FRONTEND_API_URL": "http://localhost:8080"
+            }
+        }
+    ]
+}

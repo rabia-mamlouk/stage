@@ -1,0 +1,18 @@
+<div *ngIf="items.length === 0" class="empty-cart">Votre panier est vide.</div>
+
+<div *ngIf="items.length > 0" class="cart-container">
+  <div class="cart-item" *ngFor="let item of items; let i = index">
+    <img [src]="item.image" alt="product" class="item-image">
+    <div class="item-info">
+      <h3>{{ item.name }}</h3>
+      <p><strong>Marque :</strong> {{ item.brand }}</p>
+      <p><strong>Prix :</strong> {{ item.price }}</p>
+    </div>
+    <button (click)="removeItem(i)" class="remove-btn">Supprimer</button>
+  </div>
+
+  <div class="cart-actions">
+    <button (click)="clearCart()" class="clear-btn">🗑️ Vider le panier</button>
+    <div class="total"><strong>Total :</strong> {{ getTotal() | number: '1.2-2' }} TND</div>
+  </div>
+</div>
