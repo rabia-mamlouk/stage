@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+
+  backend:
+    build:
+      context: ./backend/Clean Architecteur
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - PG_HOST=db
+      - PG_DATABASE=Produit_DB
+      - PG_USERNAME=postgres
+      - PG_PASSWORD=BIBAbouba04
+    depends_on:
+      - db
+
+
+  frontend:
+    build:
+      context: ./front/gestion-produit
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    environment:
+      NODE_ENV: development
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: Produit_BD
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: BIBAbouba04
+    ports:
+      - "5435:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
